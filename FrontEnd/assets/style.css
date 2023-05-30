@@ -23,6 +23,12 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
@@ -186,3 +192,73 @@ footer nav ul {
 	margin: 2em
 }
 
+/** css rajouter pour les filtres **/
+
+#filters {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#filters button {
+  border: 1px solid #1D6154;
+  border-radius: 60px;
+  margin: 5px;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #1D6154;
+  cursor: pointer;
+}
+
+#filters button:hover {
+  background-color: #1D6154;
+  color: #ffffff;
+}
+
+#filters button.active {
+	background-color: #1D6154;
+	color: #ffffff;
+  }
+
+.bold {
+	font-weight: bold;
+}
+
+#login {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+label {
+	display: block;
+	font-weight: 500;
+	margin-bottom: 7px;
+}
+
+input {
+	width: 379px;
+	height: 51px;
+	margin-bottom: 30px;
+}
+
+#login button {
+	width: 179px;
+	height: 36px;
+	background: #1D6154;
+	border-radius: 60px;
+	font-family: 'Syne';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 17px;
+	color: #FFFFFF;
+	margin-top: 7px;
+}
+
+.block{
+	display: block;
+}
+
+#login a {
+	display: block;
+}
