@@ -13,25 +13,30 @@ function login() {
       },
       body: JSON.stringify(user)
     })
-    .then(response => response.json())
     .then(response => {
-      console.log(response); // Log the response object
-  
-      // Handle the API response accordingly
+      if (response.ok)
+        return response.json();
+
+      else {
+        throw new Error('Email ou mot de passe invalide');
+      }
+  })
+
+    .then(response => {
+    
+      // Si on option un token en reponse alors il le gardera dans la memoire pour cette session
       if (response.token) {
-        // Successful login, store the token in session storage
         sessionStorage.setItem('token', response.token);
   
         console.log('Login successful');
         window.location.href = 'http://127.0.0.1:5500/FrontEnd/index.html';
       } else {
-        // Failed login, display an error message
-        alert('Email or password is incorrect');
+        // Sinon une alerte
+        alert('Email ou mot de passe invalide');
       }
     })
     .catch(error => {
       console.error(error);
-      // Handle any errors that occur during the API request
     });
   }
   

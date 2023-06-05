@@ -124,42 +124,54 @@ if (sessionStorage.getItem('token')) {
 
   //---------------affiche les boutons modifiers ----------------
 
- // Check if a token exists in the session storage
+//  // Check si il y a un toek dans le storage de la session
+// if (sessionStorage.getItem('token')) {
+//   // Si le token existe , creer le bouton modifier
+//   const modifierButton = document.createElement('button');
+//   modifierButton.textContent = 'Modifier';
+//   modifierButton.id = 'modifier-button';
+
+//   // Event listener au bouton
+//   modifierButton.addEventListener('click', function() {
+//     // Create an input element for file upload
+//     const input = document.createElement('input');
+//     input.type = 'file';
+
+//     // Add event listener to the input element to handle file selection
+//     input.addEventListener('change', function(event) {
+//       const file = event.target.files[0];
+
+//       // Create a FileReader object to read the uploaded file
+//       const reader = new FileReader();
+
+//       // Set up the onload event handler to update the image source
+//       reader.onload = function(e) {
+//         introImage.src = e.target.result;
+//       };
+
+//       // Read the uploaded file as a data URL
+//       reader.readAsDataURL(file);
+//     });
+
+//     // Trigger the file selection dialog
+//     input.click();
+//   });
+
+//   // Get the #introduction section element
+//   const introductionSection = document.querySelector('#introduction');
+
+//   // Append the modifier button as the last child of the introductionSection
+//   introductionSection.appendChild(modifierButton);
+// }
+
+//---------une fois login------
+
 if (sessionStorage.getItem('token')) {
-  // Token exists, create and append the modifier button
-  const modifierButton = document.createElement('button');
-  modifierButton.textContent = 'Modifier';
-  modifierButton.id = 'modifier-button';
+  let loginLogout = document.getElementById('login-logout')
+  loginLogout.innerHTML = 'logout';
+  loginLogout.href = 'index.html';
 
-  // Add event listener to the modifier button
-  modifierButton.addEventListener('click', function() {
-    // Create an input element for file upload
-    const input = document.createElement('input');
-    input.type = 'file';
+loginLogout.addEventListener('click', function(){
+  sessionStorage.removeItem('token');
 
-    // Add event listener to the input element to handle file selection
-    input.addEventListener('change', function(event) {
-      const file = event.target.files[0];
-
-      // Create a FileReader object to read the uploaded file
-      const reader = new FileReader();
-
-      // Set up the onload event handler to update the image source
-      reader.onload = function(e) {
-        introImage.src = e.target.result;
-      };
-
-      // Read the uploaded file as a data URL
-      reader.readAsDataURL(file);
-    });
-
-    // Trigger the file selection dialog
-    input.click();
-  });
-
-  // Get the #introduction section element
-  const introductionSection = document.querySelector('#introduction');
-
-  // Append the modifier button as the last child of the introductionSection
-  introductionSection.appendChild(modifierButton);
-}
+})}
