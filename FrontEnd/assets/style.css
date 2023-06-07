@@ -129,8 +129,7 @@ li:hover {
 	margin-bottom: 0.5em;
 }
 #portfolio h2 {
-	text-align: center;
-	margin-bottom: 1em;
+	margin: 0;
 }
 .gallery {
 	width: 100%;
@@ -280,6 +279,15 @@ input {
 
 .projet-modify {
 	display: flex;
-	width: 100%;
+	align-items: center;
 	justify-content: center;
+	text-align: center;
+	height: 100%;
+	margin-bottom: 1em;
+}
+
+#portfolio h2,
+#portfolio p 
+#porflolio i{
+	margin: 0;
 }

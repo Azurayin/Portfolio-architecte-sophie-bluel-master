@@ -50,6 +50,7 @@ containerDiv.appendChild(iconElement);
 containerDiv.appendChild(paragraphElement);
 containerDiv.appendChild(fileInput);
 
+
 const introduction = document.getElementById("introduction");
 // Append the container div to the introduction
 introduction.appendChild(containerDiv);
