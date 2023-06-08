@@ -23,21 +23,23 @@
 //     };
 //   }
 // }
+
+
 if (sessionStorage.getItem('token')){
 // Create container div
-var containerDiv = document.createElement("div");
-containerDiv.className = "modifier-button-container";
+var containerDivProfile = document.createElement("div");
+containerDivProfile.className = "modifier-button-container";
 
 // Create icon element
-var iconElement = document.createElement("i");
-iconElement.className = "fa-regular fa-pen-to-square";
-iconElement.addEventListener("click", triggerFileInput);
+var iconChangeProfile = document.createElement("i");
+iconChangeProfile.className = "fa-regular fa-pen-to-square";
+iconChangeProfile.addEventListener("click", triggerFileInput);
 
-// Create button element
-var paragraphElement = document.createElement("p");
-paragraphElement.className = "modifier-button"
-paragraphElement.innerText = "Modifier";
-paragraphElement.addEventListener("click", triggerFileInput);
+// Create paragraphe element
+var paragraphChangeProfile = document.createElement("p");
+paragraphChangeProfile.className = "modifier-button"
+paragraphChangeProfile.innerText = "Modifier";
+paragraphChangeProfile.addEventListener("click", triggerFileInput);
 
 // Create file input element
 var fileInput = document.createElement("input");
@@ -46,14 +48,17 @@ fileInput.id = "imageInput";
 fileInput.accept = "image/*";
 
 // Append elements to the container div
-containerDiv.appendChild(iconElement);
-containerDiv.appendChild(paragraphElement);
-containerDiv.appendChild(fileInput);
+containerDivProfile.appendChild(iconChangeProfile);
+containerDivProfile.appendChild(paragraphChangeProfile);
+containerDivProfile.appendChild(fileInput);
 
 
 const introduction = document.getElementById("introduction");
 // Append the container div to the introduction
-introduction.appendChild(containerDiv);
+introduction.appendChild(containerDivProfile);
+
+
+
 
 function triggerFileInput() {
   var input = document.getElementById("imageInput");
@@ -78,4 +83,7 @@ function uploadImage(event) {
       imageElement.src = e.target.result;
     };
   }
-}}
+}
+
+
+}
