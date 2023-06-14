@@ -71,6 +71,8 @@ fetch(worksApiUrl)
     });
 
 
+
+    
   //---------------partie filtre----------------------
 
   const categoriesApiUrl = apiUrl + 'categories';
@@ -208,3 +210,4 @@ loginLogout.addEventListener('click', function(){
   sessionStorage.removeItem('token');
 
 })}
+

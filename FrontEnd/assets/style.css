@@ -385,7 +385,7 @@ input {
 
 /* modale */
 
-.modal {
+.modale {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -395,6 +395,7 @@ input {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	display: none;
 }
   
 .modal-content {
@@ -409,7 +410,7 @@ input {
 }
 
 .modal-content-add {
-	
+
 }
 
 .close {
