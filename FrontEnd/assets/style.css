@@ -268,10 +268,7 @@ input {
 	margin-top: 28px;
 }
 
-.modifier-button-container {
-	display: flex;
-	margin-left: 5%;
-}
+
 
 #imageInput {
 	display: none;
@@ -290,4 +287,215 @@ input {
 #portfolio p 
 #porflolio i{
 	margin: 0;
+}
+
+/* style de la barre d'edition---------------- */
+
+.mode-edition {
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: black;
+	display: flex;
+	align-items: center;
+}
+
+.modified-header {
+	display: flex;
+	justify-content: space-between;
+	margin: 110px 0 50px;
+}
+
+.mode-edition {
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
+
+.mode-edition i,
+.mode-edition p {
+	color: white;
+	font-size: 16px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.mode-edition p {
+	margin-left: 13px;
+	margin-right: 21px;
+}
+
+.mode-edition button{
+	font-size: 16px;
+	background: #FFFFFF;
+	border-radius: 60px;
+	padding: 11px 23px;
+}
+/* fin du style de la bar d'édition--------------- */
+
+
+/* bouton modifier du profile */
+.modifier-button-container {
+	display: flex;
+	margin-left: 5%;
+	margin-top: 15px;
+}
+
+.modifier-button-container p {
+	font-size: 16px;
+	margin-left: 12px;
+	margin-top: 2px;
+	color: #1D6154;
+}
+
+.modifier-button-container i {
+	font-size: 18px;
+	color: #1D6154;
+}
+
+.modifier-button-container p:hover,
+.modifier-button-container i:hover{
+	cursor: pointer;
+	color: #B1663C;
+}
+/* fin du style du bouton modifier du profile */
+
+/* bouton modifier des projets */
+
+.projet-modify i {
+	font-size: 18px;
+	color: #1D6154;
+	margin-left: 31px;
+}
+
+.projet-modify p {
+	font-size: 16px;
+	margin-left: 12px;
+	color: #1D6154;
+	margin-top: 2px;
+}
+
+.projet-modify i:hover,
+.projet-modify p:hover {
+	cursor: pointer;
+	color: #B1663C;
+}
+
+/* modale */
+
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.3);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+  
+.modal-content {
+	background: #FFFFFF;
+	border-radius: 10px;
+	position: relative;
+	width: 630px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction : column;
+}
+
+.modal-content-add {
+	
+}
+
+.close {
+	cursor: pointer;
+	position: absolute;
+ 	top: 32px;
+  	right: 36px;
+  	margin: 0;
+  	font-size: 24px;
+}
+
+  
+.modal-content h2 {
+	font-size: 26px;
+	margin-bottom: 56px;
+	margin-top: 60px;
+	font-weight: 400;
+	font-family: 'Work Sans';
+	text-align: center;
+	color: black;
+}
+  
+.works-edition-container {
+	margin-right: 105px;
+	margin-left: 105px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	column-gap: 18px;
+	row-gap: 6px;
+	padding-bottom: 47px;
+}
+  
+.works-edition-container img{
+	width: 100%;
+}
+
+.works-edition-container figure {
+	position: relative;
+}
+
+.works-edition-container div {
+	position: absolute;
+	right: 5px;
+	top: 8px;
+	width: 17px;
+	height: 17px;
+	background-color: black;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 2px;
+
+}
+
+.fa-trash-can {
+	color: white;
+	font-size: 9px;
+}
+
+.thin-line {
+	border: none;
+	background-color: #000000;
+	width: 420px;
+	border: 1px solid #B3B3B3;
+	margin-bottom: 38px;
+}
+
+.modal-content button {
+	height: 36px;
+	width: 237px;
+	border-radius: 60px;
+	background: #1D6154;
+	color: white;
+	margin-bottom: 23px;
+}
+
+.delete-galery {
+	font-family: 'Syne';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	text-align: center;
+	color: #D65353;
+	background: #FFFFFF;
+	border-radius: 10px;
+	width: 230px;
+	height: 17px;
+	margin-bottom: 48px;
 }

@@ -25,6 +25,9 @@
 // }
 
 
+
+
+// Creation des elements de modification pour le PROFILE
 if (sessionStorage.getItem('token')){
 // Create container div
 var containerDivProfile = document.createElement("div");
@@ -86,4 +89,8 @@ function uploadImage(event) {
 }
 
 
+const header = document.querySelector('header');
+header.classList.add("modified-header");
+const modeEdition = document.querySelector('.mode-edition');
+modeEdition.style.display = 'flex';
 }
