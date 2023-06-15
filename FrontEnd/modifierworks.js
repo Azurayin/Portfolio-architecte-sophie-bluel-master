@@ -18,15 +18,33 @@ projetmodify.appendChild(paragraphChangework);
 
 const modale = document.querySelector('.modale');
 
+var btnAddWork = document.querySelector('.button-add-work')
+btnAddWork.addEventListener("click",triggermodaleContent2Flex)
 
+var btnPrecedent = document.querySelector('.precedent')
+btnPrecedent.addEventListener("click",triggermodaleContent1Flex)
 
-var closemodale = document.querySelector('.close');
-closemodale.addEventListener("click", triggermodaleDisplayNone);
+var closeModale = document.querySelectorAll('.close');
+closeModale.forEach(function(close) {
+  close.addEventListener("click", triggermodaleDisplayNone);
+});
 
 iconChangeWorks.addEventListener("click", triggermodaleDisplayFlex);
 paragraphChangework.addEventListener("click", triggermodaleDisplayFlex);
-modale
 
+function triggermodaleContent2Flex() {
+  var modaleContent1 = document.querySelector('.modale-content1');
+  modaleContent1.style.display = 'none';
+  var modaleContent2 = document.querySelector('.modale-content2');
+  modaleContent2.style.display = 'flex';
+}
+
+function triggermodaleContent1Flex() {
+  var modaleContent1 = document.querySelector('.modale-content1');
+  modaleContent1.style.display = 'flex';
+  var modaleContent2 = document.querySelector('.modale-content2');
+  modaleContent2.style.display = 'none';
+}
 
 function triggermodaleDisplayNone() {
  modale.style.display = 'none';
@@ -43,4 +61,7 @@ modale.addEventListener('click', function(event) {
       modale.style.display = 'none';
     }
   });
+
 }
+
+

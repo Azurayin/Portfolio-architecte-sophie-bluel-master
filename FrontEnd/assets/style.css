@@ -407,7 +407,7 @@ input {
 	border-radius: 10px;
 	position: relative;
 	width: 630px;
-	display: none;
+	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction : column;
@@ -418,7 +418,7 @@ input {
 	border-radius: 10px;
 	position: relative;
 	width: 630px;
-	display: flex;
+	display: none;
 	justify-content: center;
 	align-items: center;
 	flex-direction : column;
@@ -428,7 +428,16 @@ input {
 	cursor: pointer;
 	position: absolute;
  	top: 32px;
-  	right: 36px;
+  	right: 40px;
+  	margin: 0;
+  	font-size: 28px;
+}
+
+.precedent {
+	cursor: pointer;
+	position: absolute;
+ 	top: 32px;
+  	left: 30px;
   	margin: 0;
   	font-size: 24px;
 }
@@ -499,7 +508,7 @@ input {
 	margin-bottom: 23px;
 }
 
-.modale-content2 button {
+.modale2-valider {
 	height: 36px;
 	width: 237px;
 	border-radius: 60px;
@@ -531,12 +540,19 @@ input {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
+	margin-bottom: 30px;
 }
 
 .work-add-container-elements {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+}
+
+.work-add-container-elements img {
+	width: 130px;
+	height: 170px;
+	object-fit: cover;
 }
 
 .works-add-container i {
@@ -560,6 +576,11 @@ input {
 	font-size: 10px;
 	font-weight: 400;
 	margin-bottom: 19px;
+}
+
+.work-add-container-elements label {
+	font-weight: 500;
+	font-size: 14px;
 }
 
 .modale-content2 input {

@@ -26,32 +26,33 @@
 			
 		  </div>
 		  <div class="thin-line"></div>
-		  <button>Ajouter une photo</button>
+		  <button class="button-add-work">Ajouter une photo</button>
 		  <p class="delete-galery">supprimer la galerie</p>
 		</div>
 
 		<div class="modale-content2">
-			<span class="close">&times;</span>
+			<i class="fa-solid fa-arrow-left precedent"></i>
+			<span class="close">x</span>
 			<h2>Ajout photo</h2>
 			<div class="works-add-container">
 				<div class="work-add-container-elements">
-					<i class="fa-sharp fa-regular fa-image"></i>
-					<button>+Ajouter photo</button>
-					<p>jpg, png : 4mo max</p>
+				  <i id="modale2-work-icon" class="fa-sharp fa-regular fa-image"></i>
+				  <button id="uploadButton">+Ajouter photo</button>
+				  <p id="fileInfo">jpg, png: 4mo max</p>
 				</div>
-			</div>
+			  </div>
 			<div>
 				<label for="title" class="label">Title</label>
 				<input type="text" class="labelModale" id="title" name="title">
 
 				<label for="categorie" class="categorie">Catégorie</label>
 				<select id="categorySelect">
-					<option value="0"></option>
+					<option></option>
 				</select>
 			</div>
 
 			<div class="thin-line"></div>
-			<button>Valider</button>
+			<button class="modale2-valider">Valider</button>
 		  </div>
 	  </div>
 	  
@@ -118,6 +119,7 @@
 	<script src="upload.js"></script>
 	<script src="modifierworks.js"></script>
 	<script src="categoryselect.js"></script>
+	<script src="uploadpreview.js"></script>
 </footer>
 </body>
 </html>
