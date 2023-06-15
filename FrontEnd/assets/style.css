@@ -304,6 +304,7 @@ input {
     background-color: black;
 	display: flex;
 	align-items: center;
+	z-index: 1;
 }
 
 .modified-header {
@@ -615,3 +616,6 @@ input {
 	border: none;
 }
 
+#previewWork {
+	display: none;
+}
