@@ -6,35 +6,37 @@ var apiEndpointWorks = 'http://localhost:5678/api/works';
 
 function postData() {
     // Get the input values from the user
-    var imageInput = document.getElementById('previewWork').getAttribute('src');
-    var titleInput = document.getElementById('title').value;
-    var categoryInput = document.getElementById('categorySelect').value;
-    
+    // files[0] as the data is checked in the HTML code
+    let imageInput = document.getElementById('inputFile').files[0];
+    let titleInput = document.getElementById('title').value;
+    let categoryInput = document.getElementById('categorySelect').value;
+
+
     // Get the token from sessionStorage
-    var token = sessionStorage.getItem('token');
+    let token = sessionStorage.getItem('token');
   
     // Make sure the token is defined
     if (!token) {
       console.error('Token is not defined');
       return;
     }
-  
-  // Construct the request body
-  var requestBody = {
-    title: titleInput,
-    imageUrl: imageInput,
-    categoryId: categoryInput,
-    userId: 1 
-  };
+
+    // The API is requesting a multipart/form-data
+  let requestBodyForm = new FormData();
+  requestBodyForm.append('title',titleInput);
+  requestBodyForm.append('image',imageInput);
+  requestBodyForm.append('category',categoryInput);
   
   // Make the POST request
   fetch(apiEndpointWorks, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}` // Include the token in the Authorization header
+    headers: { 
+      // Copy pasted from the API curl
+      'Authorization': `Bearer ${token}`, // Include the token in the Authorization header
+      'Content-Type': 'multipart/form-data', 
+      'accept': 'application/json'
     },
-    body: JSON.stringify(requestBody)
+    body: requestBodyForm
   })
     .then(response => {
       if (response.ok) {

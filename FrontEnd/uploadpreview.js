@@ -1,6 +1,7 @@
 document.getElementById('uploadButton').addEventListener('click', function() {
   var input = document.createElement('input');
   input.type = 'file';
+  input.id = 'inputFile';
   input.addEventListener('change', function() {
     var file = input.files[0];
 
@@ -23,6 +24,8 @@ document.getElementById('uploadButton').addEventListener('click', function() {
       modale2Valider.style.backgroundColor = "#1D6154";
     }
   });
-
+let container = document.querySelector('.work-add-container-elements');
+container.appendChild(input);
   input.click();
 });
+
