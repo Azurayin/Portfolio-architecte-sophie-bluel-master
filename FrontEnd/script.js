@@ -36,39 +36,43 @@ fetch(worksApiUrl)
   });
 
 
-  const workEditionContainer = document.querySelector('.works-edition-container')
-
-  fetch(worksApiUrl)
-    .then(function(response) {
-      return response.json();
-    })
-    .then(function(data) {
-      // Fait une boucle qui va creer l'element 'figure' pour chaque (forEach) objet de l'array
-      data.forEach(function(item) {
-        var figure = document.createElement('figure');
-        
-        var img = document.createElement('img');
-        img.src = item.imageUrl;
-
-        var paragrapheEditer = document.createElement('p');
-        paragrapheEditer.textContent = "éditer";
-
-        var div = document.createElement('div');
-        var iconDiv = document.createElement('i');
-        iconDiv.classList.add('fa-regular', 'fa-trash-can');
-        div.appendChild(iconDiv);
-        
-        figure.appendChild(img);
-        figure.appendChild(paragrapheEditer);
-        figure.appendChild(div);
+  const workEditionContainer = document.querySelector('.works-edition-container');
+  workEditionContainer.id = 'workContainer';
   
-        workEditionContainer.appendChild(figure);
-        
+  function fetchWorks() {
+    fetch(worksApiUrl)
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(data) {
+        data.forEach(function(item) {
+          var figure = document.createElement('figure');
+          figure.dataset.id = item.id;
+  
+          var img = document.createElement('img');
+          img.src = item.imageUrl;
+  
+          var paragrapheEditer = document.createElement('p');
+          paragrapheEditer.textContent = "éditer";
+  
+          var div = document.createElement('div');
+          var iconDiv = document.createElement('i');
+          iconDiv.classList.add('fa-regular', 'fa-trash-can');
+          div.appendChild(iconDiv);
+  
+          figure.appendChild(img);
+          figure.appendChild(paragrapheEditer);
+          figure.appendChild(div);
+  
+          workEditionContainer.appendChild(figure);
+        });
+      })
+      .catch(function(error) {
+        console.log(error);
       });
-    })
-    .catch(function(error) {
-      console.log(error);
-    });
+  }
+  
+  fetchWorks();
 
 
 
