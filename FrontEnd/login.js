@@ -1,3 +1,4 @@
+let loginError = document.querySelector('.login-error');
 function login() {
     var email = document.getElementById('email').value;
     var password = document.getElementById('password').value;
@@ -18,6 +19,7 @@ function login() {
         return response.json();
 
       else {
+        loginError.style.display = 'block';
         throw new Error('Email ou mot de passe invalide');
       }
   })

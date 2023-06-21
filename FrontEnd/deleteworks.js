@@ -19,6 +19,9 @@ workEditionContainer.addEventListener('click', function(event) {
         if (response.ok) {
           figure.remove();
           console.log('Element removed successfully');
+          gallery.innerHTML='';
+          fetchWorksGalery();
+
         } else {
           throw new Error('Failed to delete the item');
         }

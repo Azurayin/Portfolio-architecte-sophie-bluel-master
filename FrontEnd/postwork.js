@@ -1,4 +1,5 @@
-var modale2Validation = document.querySelector(".modale2-valider");
+const modale2Validation = document.querySelector(".modale2-valider");
+const postWorkError = document.querySelector('.postwork-error')
 
 modale2Validation.addEventListener("click", postData);
 
@@ -45,20 +46,30 @@ function postData() {
         var precedent = document.querySelector('.precedent');
         precedent.click();
 
+        document.getElementById('modale2-work-icon').style.display = 'block';
+        document.getElementById('uploadButton').style.display = 'block';
+        document.getElementById('fileInfo').style.display = 'block';
+        var imagePreview = document.getElementById('previewWork');
+        imagePreview.style.display = 'none';
+
         function reloadWorksEditionContainer() {
           // Remove existing elements from the container
           const workContainer = document.getElementById('workContainer');
           while (workContainer.firstChild) {
             workContainer.removeChild(workContainer.firstChild);
           }
+          gallery.innerHTML='';
         
           // Fetch and populate the container with updated data
-          fetchWorks();
+          fetchWorksModale();
+          fetchWorksGalery();
         }
       } else {
         // Request failed
         console.error('Failed to post data:', response.status);
         // Handle the error as needed
+        
+        postWorkError.style.display = 'block';
       }
     })
     .catch(error => {

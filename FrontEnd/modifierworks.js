@@ -37,6 +37,10 @@ function triggermodaleContent2Flex() {
   modaleContent1.style.display = 'none';
   var modaleContent2 = document.querySelector('.modale-content2');
   modaleContent2.style.display = 'flex';
+  postWorkError.style.display = 'none';
+  document.getElementById('title').value = '';
+  document.getElementById('categorySelect').value = ''
+
 }
 
 function triggermodaleContent1Flex() {

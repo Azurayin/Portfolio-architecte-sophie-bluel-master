@@ -5,6 +5,7 @@ const worksApiUrl = apiUrl + 'works';
 const gallery = document.querySelector('.gallery');
 
 // Faire une requete GET a l'API en utilisant fetch qui va nous retourner les données en .json
+function fetchWorksGalery(){
 fetch(worksApiUrl)
   .then(function(response) {
     return response.json();
@@ -34,12 +35,13 @@ fetch(worksApiUrl)
   .catch(function(error) {
     console.log(error);
   });
-
+  }
+  fetchWorksGalery();
 
   const workEditionContainer = document.querySelector('.works-edition-container');
   workEditionContainer.id = 'workContainer';
   
-  function fetchWorks() {
+  function fetchWorksModale() {
     fetch(worksApiUrl)
       .then(function(response) {
         return response.json();
@@ -72,7 +74,7 @@ fetch(worksApiUrl)
       });
   }
   
-  fetchWorks();
+  fetchWorksModale();
 
 
 

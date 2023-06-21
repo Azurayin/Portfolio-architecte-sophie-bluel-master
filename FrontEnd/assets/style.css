@@ -141,6 +141,7 @@ li:hover {
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-column-gap: 20px;
 	grid-row-gap: 20px;
+	margin-top: 60px;
 }
 
 .gallery img {
@@ -272,7 +273,10 @@ input {
 	margin-top: 28px;
 }
 
-
+.login-error {
+	display: none;
+	color: red;
+}
 
 #imageInput {
 	display: none;
@@ -532,6 +536,11 @@ input {
 	margin-bottom: 48px;
 }
 
+.delete-galery:hover {
+	color: red;
+	cursor: pointer;
+}
+
 /*Modale 2*/
 
 .works-add-container {
@@ -617,5 +626,14 @@ input {
 }
 
 #previewWork {
+	display: none;
+}
+
+.postwork-error {
+	display:none;
+	text-align: center;
+}
+
+#inputFile {
 	display: none;
 }
