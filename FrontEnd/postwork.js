@@ -42,6 +42,9 @@ function postData() {
         // Request was successful
         console.log('Data posted successfully!');
         // Perform any additional actions after successful data submission
+        document.getElementById('inputFile').value = ''; // Reset file input
+        document.getElementById('title').value = ''; // Reset title input
+        document.getElementById('categorySelect').value = ''; // Reset category input
         reloadWorksEditionContainer();
         var precedent = document.querySelector('.precedent');
         precedent.click();

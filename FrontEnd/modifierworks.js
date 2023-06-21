@@ -48,6 +48,11 @@ function triggermodaleContent1Flex() {
   modaleContent1.style.display = 'flex';
   var modaleContent2 = document.querySelector('.modale-content2');
   modaleContent2.style.display = 'none';
+  document.getElementById('modale2-work-icon').style.display = 'block';
+    document.getElementById('uploadButton').style.display = 'block';
+    document.getElementById('fileInfo').style.display = 'block  ';
+    imagePreview.style.display = 'none';
+  
 }
 
 function triggermodaleDisplayNone() {

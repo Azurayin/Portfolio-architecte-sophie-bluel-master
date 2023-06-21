@@ -36,7 +36,9 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	background-color: #FFFEF8;;
 }
+
 ol, ul {
 	list-style: none;
 }
@@ -234,6 +236,8 @@ footer nav ul {
 	align-items: center;
 	flex-direction: column;
 }
+
+
 
 label {
 	display: block;
@@ -632,6 +636,7 @@ input {
 .postwork-error {
 	display:none;
 	text-align: center;
+	color: red;
 }
 
 #inputFile {

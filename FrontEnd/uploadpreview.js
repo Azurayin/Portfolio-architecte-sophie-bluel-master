@@ -3,9 +3,8 @@ document.getElementById('uploadButton').addEventListener('click', uploadPreview)
 
 
 function uploadPreview() {
-  var input = document.createElement('input');
-  input.type = 'file';
-  input.id = 'inputFile';
+  var input = document.getElementById('inputFile');
+  
   input.addEventListener('change', function() {
     var file = input.files[0];
 
