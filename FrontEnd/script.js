@@ -1,10 +1,12 @@
+//Code pour la page d'accueil (photo de profile,gallerie,filtres)
+
 const apiUrl = 'http://localhost:5678/api/';
 const worksApiUrl = apiUrl + 'works';
 
-// selectionne la class gallery
 const gallery = document.querySelector('.gallery');
 
 // Faire une requete GET a l'API en utilisant fetch qui va nous retourner les données en .json
+// Peut être utiliser pour RELOAD la gallerie
 function fetchWorksGalery(){
 fetch(worksApiUrl)
   .then(function(response) {
@@ -13,15 +15,15 @@ fetch(worksApiUrl)
   .then(function(data) {
     // Fait une boucle qui va creer l'element 'figure' pour chaque (forEach) objet de l'array et lui attribuer sa categoryId via un dataset
     data.forEach(function(item) {
-      var figure = document.createElement('figure');
+      let figure = document.createElement('figure');
       figure.dataset.category = item.categoryId;
 
       // Creer l'element img et lui attribut en source l'imageUrl de l'objet 
-      var img = document.createElement('img');
+      let img = document.createElement('img');
       img.src = item.imageUrl;
 
       // Creer le figcaption element et met en texte le title de l'objet 
-      var figcaption = document.createElement('figcaption');
+      let figcaption = document.createElement('figcaption');
       figcaption.textContent = item.title;
 
       // Append l'img et le figcaption a l'element figure
@@ -38,43 +40,6 @@ fetch(worksApiUrl)
   }
   fetchWorksGalery();
 
-  const workEditionContainer = document.querySelector('.works-edition-container');
-  workEditionContainer.id = 'workContainer';
-  
-  function fetchWorksModale() {
-    fetch(worksApiUrl)
-      .then(function(response) {
-        return response.json();
-      })
-      .then(function(data) {
-        data.forEach(function(item) {
-          var figure = document.createElement('figure');
-          figure.dataset.id = item.id;
-  
-          var img = document.createElement('img');
-          img.src = item.imageUrl;
-  
-          var paragrapheEditer = document.createElement('p');
-          paragrapheEditer.textContent = "éditer";
-  
-          var div = document.createElement('div');
-          var iconDiv = document.createElement('i');
-          iconDiv.classList.add('fa-regular', 'fa-trash-can');
-          div.appendChild(iconDiv);
-  
-          figure.appendChild(img);
-          figure.appendChild(paragrapheEditer);
-          figure.appendChild(div);
-  
-          workEditionContainer.appendChild(figure);
-        });
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
-  }
-  
-  fetchWorksModale();
 
 
 
@@ -95,6 +60,7 @@ fetch(worksApiUrl)
   var btnAll = document.createElement('button');
   btnAll.textContent = 'Tout';
   btnAll.classList.add('active'); 
+  
   // Met un EventListener en click qui fera appel a deux fonctions (montrer tout les objets et faire que le button selectionner soit 'active')
   btnAll.addEventListener('click', function() {
     showAllItems();
@@ -119,7 +85,7 @@ if (sessionStorage.getItem('token')) {
       // Une pour display les objets qui correspond au filtre selectionner)
       // L'autre pour faire en sorte que le filtre selectionner soit actif
       data.forEach(function(filter) {
-        var btn = document.createElement('button');
+        let btn = document.createElement('button');
         btn.textContent = filter.name;
         btn.addEventListener('click', function() {
           filterItems(filter.id);
@@ -134,7 +100,7 @@ if (sessionStorage.getItem('token')) {
   
   // Fonction pour montrer tout les objets
   function showAllItems() {
-    var items = document.querySelectorAll('.gallery figure');
+    let items = document.querySelectorAll('.gallery figure');
     items.forEach(function(item) {
       item.style.display = 'block';
     });
@@ -163,49 +129,8 @@ if (sessionStorage.getItem('token')) {
   }
   
 
-  //---------------affiche les boutons modifiers ----------------
 
-//  // Check si il y a un toek dans le storage de la session
-// if (sessionStorage.getItem('token')) {
-//   // Si le token existe , creer le bouton modifier
-//   const modifierButton = document.createElement('button');
-//   modifierButton.textContent = 'Modifier';
-//   modifierButton.id = 'modifier-button';
-
-//   // Event listener au bouton
-//   modifierButton.addEventListener('click', function() {
-//     // Create an input element for file upload
-//     const input = document.createElement('input');
-//     input.type = 'file';
-
-//     // Add event listener to the input element to handle file selection
-//     input.addEventListener('change', function(event) {
-//       const file = event.target.files[0];
-
-//       // Create a FileReader object to read the uploaded file
-//       const reader = new FileReader();
-
-//       // Set up the onload event handler to update the image source
-//       reader.onload = function(e) {
-//         introImage.src = e.target.result;
-//       };
-
-//       // Read the uploaded file as a data URL
-//       reader.readAsDataURL(file);
-//     });
-
-//     // Trigger the file selection dialog
-//     input.click();
-//   });
-
-//   // Get the #introduction section element
-//   const introductionSection = document.querySelector('#introduction');
-
-//   // Append the modifier button as the last child of the introductionSection
-//   introductionSection.appendChild(modifierButton);
-// }
-
-//---------une fois login------
+//---------Bouton de logout------
 
 if (sessionStorage.getItem('token')) {
   let loginLogout = document.getElementById('login-logout')

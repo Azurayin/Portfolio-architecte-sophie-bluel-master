@@ -1,10 +1,12 @@
-let loginError = document.querySelector('.login-error');
+
+
+var loginError = document.querySelector('.login-error');
 function login() {
-    var email = document.getElementById('email').value;
-    var password = document.getElementById('password').value;
+    let email = document.getElementById('email').value;
+    let password = document.getElementById('password').value;
   
-    var apiEndpoint = 'http://localhost:5678/api/users/login';
-    var user = { email: email, password: password };
+    let apiEndpoint = 'http://localhost:5678/api/users/login';
+    let user = { email: email, password: password };
   
     fetch(apiEndpoint, {
       method: 'POST',

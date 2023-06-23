@@ -1,3 +1,5 @@
+//Permet de delete l'image dans l'api selon le dataset.id de l'element figure qui contient la trashcan auquel on click.
+
 workEditionContainer.addEventListener('click', function(event) {
   if (event.target.classList.contains('fa-trash-can')) {
     event.preventDefault(); // Prevent page refresh

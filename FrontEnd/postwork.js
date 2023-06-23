@@ -1,3 +1,5 @@
+// Permet de recuperer les valeurs inséré de la modale 2 dans un FormData (requis pour l'API)
+
 const modale2Validation = document.querySelector(".modale2-valider");
 const postWorkError = document.querySelector('.postwork-error')
 
@@ -11,7 +13,6 @@ function postData() {
   let imageInput = document.getElementById('inputFile').files[0];
   let titleInput = document.getElementById('title').value;
   let categoryInput = document.getElementById('categorySelect').value;
-
   // Get the token from sessionStorage
   let token = sessionStorage.getItem('token');
 
@@ -27,25 +28,26 @@ function postData() {
   requestBodyForm.append('image', imageInput);
   requestBodyForm.append('category', categoryInput);
 
-  // Make the POST request
+  
   fetch(apiEndpointWorks, {
     method: 'POST',
     headers: {
-      // Copy pasted from the API curl
-      'Authorization': `Bearer ${token}`, // Include the token in the Authorization header
+      'Authorization': `Bearer ${token}`, 
       'accept': 'application/json'
     },
     body: requestBodyForm
   })
     .then(response => {
       if (response.ok) {
-        // Request was successful
+        // Si la requete à marché
         console.log('Data posted successfully!');
-        // Perform any additional actions after successful data submission
-        document.getElementById('inputFile').value = ''; // Reset file input
-        document.getElementById('title').value = ''; // Reset title input
-        document.getElementById('categorySelect').value = ''; // Reset category input
+        // reset les valeurs afin de pouvoir poster a nouveau
+        document.getElementById('inputFile').value = ''; 
+        document.getElementById('title').value = ''; 
+        document.getElementById('categorySelect').value = '';
+        // rafraichie la conteneur
         reloadWorksEditionContainer();
+        // permet de revenir a la premiere modale rafraichie 
         var precedent = document.querySelector('.precedent');
         precedent.click();
 
@@ -56,22 +58,17 @@ function postData() {
         imagePreview.style.display = 'none';
 
         function reloadWorksEditionContainer() {
-          // Remove existing elements from the container
-          const workContainer = document.getElementById('workContainer');
-          while (workContainer.firstChild) {
-            workContainer.removeChild(workContainer.firstChild);
-          }
           gallery.innerHTML='';
+          workEditionContainer.innerHTML= '';
         
-          // Fetch and populate the container with updated data
+          //reload la modale et la galerie
           fetchWorksModale();
           fetchWorksGalery();
         }
       } else {
         // Request failed
         console.error('Failed to post data:', response.status);
-        // Handle the error as needed
-        
+        // affiche le message d'erreur
         postWorkError.style.display = 'block';
       }
     })

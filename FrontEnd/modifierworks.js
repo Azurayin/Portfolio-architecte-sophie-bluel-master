@@ -52,7 +52,8 @@ function triggermodaleContent1Flex() {
     document.getElementById('uploadButton').style.display = 'block';
     document.getElementById('fileInfo').style.display = 'block  ';
     imagePreview.style.display = 'none';
-  
+    imagePreview.src = '';
+    document.getElementById('inputFile').value='';
 }
 
 function triggermodaleDisplayNone() {

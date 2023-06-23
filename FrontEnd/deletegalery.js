@@ -1,3 +1,4 @@
+//Delete toute la galerie de la modale par le dataset.id de chaque figure
 var deleteGaleryBtn = document.querySelector('.delete-galery');
 
 deleteGaleryBtn.addEventListener('click', deleteGalery); // Removed parentheses after deleteGalery

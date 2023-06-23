@@ -312,7 +312,7 @@ input {
     background-color: black;
 	display: flex;
 	align-items: center;
-	z-index: 1;
+	z-index: 2;
 }
 
 .modified-header {
@@ -409,6 +409,7 @@ input {
 	align-items: center;
 	justify-content: center;
 	display: none;
+	z-index: 1;
 }
   
 .modale-content1 {
